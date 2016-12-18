@@ -1,3 +1,7 @@
+.subheader--moved {
+	margin-left: 45px;
+}
+
 .taskList__item {
 	list-style-type: none;
 	background-color: #cfe2f3;
@@ -8,4 +12,17 @@
 	border-radius: 5px;
 	overflow: hidden;
 	padding: 3px 5px;
+	line-height: 17px;
+}
+
+label {
+	font-weight: 500;
+}
+
+#controlPanel__index {
+	width: 60px;
+}
+
+.mistake {
+	color: red;
 }

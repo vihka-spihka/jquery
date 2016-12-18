@@ -4,42 +4,94 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Knyazeva Viktoriya">
 		<title>jQuery Plugin</title>
-
-		<link href="main.css" rel="stylesheet">
+		
+		<link href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="libs/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<main>
-			<section>
-				<h1>Мои задачи</h1>
-				<ul class="taskList">
-					<li class="taskList__item">
-							1. Это разные карточки в списке
-					</li>
-					<li class="taskList__item">
-							2. Для простоты представим, что они все одинакового размера
-					</li>
-					<li class="taskList__item">
-							3. Кстати, в этом случае, если текст не влезает в карточку, пусть он обрежется
-					</li>
-					<li class="taskList__item">
-							4. Изначально карточки расположены в каком-то порядке
-					</li>
-					<li class="taskList__item">
-							5. Но по карточке можно кликнуть, и она переместится наверх
-					</li>
-					<li class="taskList__item">
-							6. Перемещаться карточки должны с анимацией = "улетать"
-					</li>
-					<li class="taskList__item">
-							7. Например, по этой карточке кликнули
-					</li>
-					<li class="taskList__item">
-							8. Пока карточка не долетит наверх, вместо нее показывается пустое место
-					</li>
-				</ul>
-			</section>
+		<main class="container-fluid">
+			<div class="row">
+				<div class="col-xs-8 text-center">
+					<h1>Мои задачи</h1>
+				</div>
+			</div>
+			<div class="row">
+				<section class="tasks col-xs-12 col-sm-6">
+					<h2 class="subheader subheader--moved">Список</h2>
+					<ul class="tasks__taskList">
+						<li class="taskList__item sortable ui-state-default">
+								1Это разные карточки в списке
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								2Для простоты представим, что они все одинакового размера
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								3Кстати, в этом случае, если текст не влезает в карточку, пусть он обрежется
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								4Изначально карточки расположены в каком-то порядке
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								5Но по карточке можно кликнуть, и она переместится наверх
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								6Перемещаться карточки должны с анимацией = "улетать"
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								7Например, по этой карточке кликнули
+						</li>
+						<li class="taskList__item sortable ui-state-default">
+								8Пока карточка не долетит наверх, вместо неё показывается пустое место
+						</li>
+					</ul>
+				</section>
+				<section class="controlPanel col-xs-12 col-sm-6">
+					<h2 class="subheader">Настройки</h2>
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Выберите направление перемещения:</p>
+							<div class="radio">
+								<label>
+									<input type="radio" name="direction" value="up" checked="checked"> Вверх
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="direction" value="down"> Вниз
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 form-group">
+							<label for="controlPanel__index">Введите индекс (будущий номер карточки):</label>
+							<input type="number" class="form-control" id="controlPanel__index" value="0" min="0" max="7" placeholder="введите число от 0 до 7">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 checkbox">
+							<label>
+								<input type="checkbox" value="true" id="controlPanel__checkboxDebug"> Включить режим Debug
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<button type="button" class="btn btn-danger" id="resetBtn">Сброс</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<p class="mistake"></p>
+						</div>
+					</div>
+				</section>
+			</div>
 		</main>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="plugin.js" type="text/javascript"></script>
+		<script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/plugin.js" type="text/javascript"></script>
 	</body>
 </html>
